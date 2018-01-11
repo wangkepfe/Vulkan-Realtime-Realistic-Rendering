@@ -1,5 +1,7 @@
 #include "VulkanApplication.hpp"
 
+
+
 void VulkanApplication::initVulkan() {
 	createInstance();
 	setupDebugCallback();
@@ -11,8 +13,9 @@ void VulkanApplication::initVulkan() {
 	createRenderPass();
 	createDescriptorSetLayout();
 	createGraphicsPipeline();
-	createFramebuffers();
 	createCommandPool();
+	createDepthResources();
+	createFramebuffers();
 	createTextureImage();
 	createTextureImageView();
 	createTextureSampler();
@@ -112,6 +115,10 @@ void VulkanApplication::drawFrame() {
 }
 
 void VulkanApplication::cleanupSwapChain() {
+	vkDestroyImageView(device, depthImageView, nullptr);
+	vkDestroyImage(device, depthImage, nullptr);
+	vkFreeMemory(device, depthImageMemory, nullptr);
+
 	for (auto framebuffer : swapChainFramebuffers) {
 		vkDestroyFramebuffer(device, framebuffer, nullptr);
 	}

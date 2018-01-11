@@ -128,6 +128,7 @@
   <ItemGroup>
     <ClCompile Include="Buffer.cpp" />
     <ClCompile Include="CommandBuffer.cpp" />
+    <ClCompile Include="DepthBuffering.cpp" />
     <ClCompile Include="Descriptor.cpp" />
     <ClCompile Include="FrameBuffer.cpp" />
     <ClCompile Include="GraphicsPipeline.cpp" />

@@ -62,6 +62,7 @@ void VulkanApplication::recreateSwapChain() {
 	createImageViews();
 	createRenderPass();
 	createGraphicsPipeline();
+	createDepthResources();
 	createFramebuffers();
 	createCommandBuffers();
 }
