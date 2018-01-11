@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextureMapping", "TextureMa
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DepthBuffering", "DepthBuffering\DepthBuffering.vcxproj", "{A68D32A4-0486-44A8-9348-B6771A72B5AA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ObjModel", "ObjModel\ObjModel.vcxproj", "{14E78ECF-2079-4CD3-A6C6-04E807CF765A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{A68D32A4-0486-44A8-9348-B6771A72B5AA}.Release|x64.Build.0 = Release|x64
 		{A68D32A4-0486-44A8-9348-B6771A72B5AA}.Release|x86.ActiveCfg = Release|Win32
 		{A68D32A4-0486-44A8-9348-B6771A72B5AA}.Release|x86.Build.0 = Release|Win32
+		{14E78ECF-2079-4CD3-A6C6-04E807CF765A}.Debug|x64.ActiveCfg = Debug|x64
+		{14E78ECF-2079-4CD3-A6C6-04E807CF765A}.Debug|x64.Build.0 = Debug|x64
+		{14E78ECF-2079-4CD3-A6C6-04E807CF765A}.Debug|x86.ActiveCfg = Debug|Win32
+		{14E78ECF-2079-4CD3-A6C6-04E807CF765A}.Debug|x86.Build.0 = Debug|Win32
+		{14E78ECF-2079-4CD3-A6C6-04E807CF765A}.Release|x64.ActiveCfg = Release|x64
+		{14E78ECF-2079-4CD3-A6C6-04E807CF765A}.Release|x64.Build.0 = Release|x64
+		{14E78ECF-2079-4CD3-A6C6-04E807CF765A}.Release|x86.ActiveCfg = Release|Win32
+		{14E78ECF-2079-4CD3-A6C6-04E807CF765A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
