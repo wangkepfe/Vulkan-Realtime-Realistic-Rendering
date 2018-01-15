@@ -24,4 +24,6 @@ Reference:
 
 <a href='http://vinjn.github.io/awesome-vulkan/'>Awesome Vulkan ecosystem</a>
 
+<a href='https://github.com/SaschaWillems/Vulkan'>Examples and demos by SaschaWillems</a>
+
 <a href='https://vulkan-tutorial.com/Introduction'>Vulkan Tutorial by Alexander Overvoorde</a>
