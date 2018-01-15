@@ -20,7 +20,7 @@ learning/developing/designing
 * image library: <a href='https://github.com/nothings/stb'>stb_image.h</a>
 * obj model library: <a href='https://github.com/syoyo/tinyobjloader'>tiny_obj_loader.h</a>
 
-<h3>Reference: </h3>
+<h3>References: </h3>
 
 * <a href='http://vinjn.github.io/awesome-vulkan/'>Awesome Vulkan ecosystem</a>
 * <a href='https://github.com/SaschaWillems/Vulkan'>Examples and demos by SaschaWillems</a>
