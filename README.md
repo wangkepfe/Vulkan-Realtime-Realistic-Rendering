@@ -19,3 +19,5 @@ learning/developing/designing
 * created depth/stencil buffers
 * image library: <a href='https://github.com/nothings/stb'>stb_image.h</a>
 * obj model library: <a href='https://github.com/syoyo/tinyobjloader'>tiny_obj_loader.h</a>
+
+Reference: <a href='https://vulkan-tutorial.com/Introduction'>Vulkan Tutorial by Alexander Overvoorde</a>
