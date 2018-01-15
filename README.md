@@ -18,4 +18,4 @@ learning/developing/designing
 * created texture images and image samplers
 * created depth/stencil buffers
 * image library: <a href='https://github.com/nothings/stb'>stb_image.h</a>
-* obj model library: <a href='https://github.com/syoyo/tinyobjloader>tiny_obj_loader.h</a>
+* obj model library: <a href='https://github.com/syoyo/tinyobjloader'>tiny_obj_loader.h</a>
