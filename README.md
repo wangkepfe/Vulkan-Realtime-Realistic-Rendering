@@ -1,7 +1,7 @@
 # Vulkan-Graphics
 learning/developing/designing
 
-<h4>- Hello Triangle</h4>
+- <h4>Hello Triangle</h4>
 
 * Fully control of physical device, selection of suitable queue families and logical device creation
 * Window surface integrated with GLFW
