@@ -47,8 +47,12 @@ void DestroyDebugReportCallbackEXT(VkInstance instance, VkDebugReportCallbackEXT
 // Vertex
 struct Vertex {
 	glm::vec3 pos;
+	glm::vec3 normal;
 	glm::vec3 color;
 	glm::vec2 texCoord;
+
+	glm::vec3 tangent;
+	glm::vec3 bitangent;
 
 	static VkVertexInputBindingDescription getBindingDescription() {
 		VkVertexInputBindingDescription bindingDescription = {};
@@ -59,8 +63,8 @@ struct Vertex {
 		return bindingDescription;
 	}
 
-	static std::array<VkVertexInputAttributeDescription, 3> getAttributeDescriptions() {
-		std::array<VkVertexInputAttributeDescription, 3> attributeDescriptions = {};
+	static std::array<VkVertexInputAttributeDescription, 6> getAttributeDescriptions() {
+		std::array<VkVertexInputAttributeDescription, 6> attributeDescriptions = {};
 
 		attributeDescriptions[0].binding = 0;
 		attributeDescriptions[0].location = 0;
@@ -70,12 +74,27 @@ struct Vertex {
 		attributeDescriptions[1].binding = 0;
 		attributeDescriptions[1].location = 1;
 		attributeDescriptions[1].format = VK_FORMAT_R32G32B32_SFLOAT;
-		attributeDescriptions[1].offset = offsetof(Vertex, color);
+		attributeDescriptions[1].offset = offsetof(Vertex, normal);
 
 		attributeDescriptions[2].binding = 0;
 		attributeDescriptions[2].location = 2;
-		attributeDescriptions[2].format = VK_FORMAT_R32G32_SFLOAT;
-		attributeDescriptions[2].offset = offsetof(Vertex, texCoord);
+		attributeDescriptions[2].format = VK_FORMAT_R32G32B32_SFLOAT;
+		attributeDescriptions[2].offset = offsetof(Vertex, color);
+
+		attributeDescriptions[3].binding = 0;
+		attributeDescriptions[3].location = 3;
+		attributeDescriptions[3].format = VK_FORMAT_R32G32_SFLOAT;
+		attributeDescriptions[3].offset = offsetof(Vertex, texCoord);
+
+		attributeDescriptions[4].binding = 0;
+		attributeDescriptions[4].location = 4;
+		attributeDescriptions[4].format = VK_FORMAT_R32G32B32_SFLOAT;
+		attributeDescriptions[4].offset = offsetof(Vertex, tangent);
+
+		attributeDescriptions[5].binding = 0;
+		attributeDescriptions[5].location = 5;
+		attributeDescriptions[5].format = VK_FORMAT_R32G32B32_SFLOAT;
+		attributeDescriptions[5].offset = offsetof(Vertex, bitangent);
 
 		return attributeDescriptions;
 	}
@@ -97,9 +116,10 @@ namespace std {
 
 // Uniform Buffer Object: UBO
 struct UniformBufferObject {
-	glm::mat4 model;
-	glm::mat4 view;
-	glm::mat4 proj;
+	glm::mat4 modelMatrix;
+	glm::mat4 mvpMatrix;
+	//glm::mat3 normalMatrix;
+	glm::vec3 viewPos;
 };
 
 
@@ -132,10 +152,11 @@ private:
 	const int HEIGHT = 600;
 
 	const std::string MODEL_PATH = "models/sphere_2k_iso.obj";
-	const std::string TEXTURE_PATH = "textures/albedo.png";
+	const std::vector<std::string> TEXTURE_PATH = { "textures/rock/albedo.png", "textures/rock/normal.png" };
 
 	// Model
 	void loadModel();
+	void computeTangentSpace();
 
 
 	// Depth Buffering
@@ -221,7 +242,7 @@ private:
 
 	// Image views
 	std::vector<VkImageView> swapChainImageViews;
-	VkImageView textureImageView;
+	std::vector<VkImageView> textureImageView;
 
 	VkImageView createImageView(VkImage image, VkFormat format, VkImageAspectFlags aspectFlags);
 	void createTextureImageView();
@@ -310,8 +331,8 @@ private:
 
 
 	// Image
-	VkImage textureImage;
-	VkDeviceMemory textureImageMemory;
+	std::vector<VkImage> textureImage;
+	std::vector<VkDeviceMemory> textureImageMemory;
 
 	VkCommandBuffer beginSingleTimeCommands();
 	void endSingleTimeCommands(VkCommandBuffer commandBuffer);

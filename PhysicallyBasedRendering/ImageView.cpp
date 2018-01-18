@@ -29,7 +29,11 @@ void VulkanApplicationPBR::createImageViews() {
 }
 
 void VulkanApplicationPBR::createTextureImageView() {
-	textureImageView = createImageView(textureImage, VK_FORMAT_R8G8B8A8_UNORM, VK_IMAGE_ASPECT_COLOR_BIT);
+	textureImageView.resize(TEXTURE_PATH.size());
+
+	for (uint32_t i = 0; i < TEXTURE_PATH.size(); ++i){
+		textureImageView[i] = createImageView(textureImage[i], VK_FORMAT_R8G8B8A8_UNORM, VK_IMAGE_ASPECT_COLOR_BIT);
+	}
 }
 
 void VulkanApplicationPBR::createTextureSampler() {

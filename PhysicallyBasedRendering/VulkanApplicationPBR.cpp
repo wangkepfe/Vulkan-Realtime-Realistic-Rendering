@@ -41,17 +41,22 @@ void VulkanApplicationPBR::mainLoop() {
 
 void VulkanApplicationPBR::updateUniformBuffer() {
 	static auto startTime = std::chrono::high_resolution_clock::now();
-
 	auto currentTime = std::chrono::high_resolution_clock::now();
 	float time = std::chrono::duration<float, std::chrono::seconds::period>(currentTime - startTime).count();
 
 	UniformBufferObject ubo = {};
-	ubo.model = glm::rotate(glm::mat4(1.0f), time * 0.1f * glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 
-	ubo.view = glm::lookAt(glm::vec3(2.0f, 2.0f, 2.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+	glm::vec3 eyePos(3.0f * glm::cos(time * glm::radians(60.0f)), 0.0f, 3.0f * glm::sin(time * glm::radians(60.0f)));
+	//glm::vec3 eyePos(2.0f, 1.0f, -0.5f);
+	glm::mat4 modelMatrix = glm::mat4();
+	glm::mat4 viewMatrix = glm::lookAt(eyePos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+	glm::mat4 projMatrix = glm::perspective(glm::radians(60.0f), swapChainExtent.width / (float)swapChainExtent.height, 0.1f, 10.0f);
+	projMatrix[1][1] *= -1;
 
-	ubo.proj = glm::perspective(glm::radians(45.0f), swapChainExtent.width / (float)swapChainExtent.height, 0.1f, 10.0f);
-	ubo.proj[1][1] *= -1;
+	ubo.modelMatrix = modelMatrix;
+	ubo.mvpMatrix = projMatrix * viewMatrix * modelMatrix;
+	//ubo.normalMatrix = glm::transpose(glm::inverse(glm::mat3(modelMatrix))); // this is wrong
+	ubo.viewPos = eyePos;
 
 	void* data;
 	vkMapMemory(device, uniformBufferMemory, 0, sizeof(ubo), 0, &data);
@@ -142,10 +147,12 @@ void VulkanApplicationPBR::cleanup() {
 
 	vkDestroySampler(device, textureSampler, nullptr);
 
-	vkDestroyImageView(device, textureImageView, nullptr);
-
-	vkDestroyImage(device, textureImage, nullptr);
-	vkFreeMemory(device, textureImageMemory, nullptr);
+	for (auto obj : textureImageView)
+		vkDestroyImageView(device, obj, nullptr);
+	for (auto obj : textureImage)
+		vkDestroyImage(device, obj, nullptr);
+	for (auto obj : textureImageMemory)
+		vkFreeMemory(device, obj, nullptr);
 
 	vkDestroyDescriptorPool(device, descriptorPool, nullptr);
 
