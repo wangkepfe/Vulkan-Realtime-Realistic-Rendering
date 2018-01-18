@@ -152,7 +152,7 @@ private:
 	const int HEIGHT = 600;
 
 	const std::string MODEL_PATH = "models/sphere_2k_iso.obj";
-	const std::vector<std::string> TEXTURE_PATH = { "textures/rock/albedo.png", "textures/rock/normal.png" };
+	const std::vector<std::string> TEXTURE_PATH = { "textures/rock/albedo.png", "textures/rock/normal.png", "textures/rock/height.png" };
 
 	// Model
 	void loadModel();

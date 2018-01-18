@@ -46,10 +46,9 @@ void VulkanApplicationPBR::updateUniformBuffer() {
 
 	UniformBufferObject ubo = {};
 
-	glm::vec3 eyePos(3.0f * glm::cos(time * glm::radians(60.0f)), 0.0f, 3.0f * glm::sin(time * glm::radians(60.0f)));
-	//glm::vec3 eyePos(2.0f, 1.0f, -0.5f);
-	glm::mat4 modelMatrix = glm::mat4();
-	glm::mat4 viewMatrix = glm::lookAt(eyePos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+	glm::vec3 eyePos(3.0f * glm::cos(time * glm::radians(30.0f)), 3.0f * glm::sin(time * glm::radians(30.0f)), 0.0f);
+	glm::mat4 modelMatrix = glm::rotate(glm::mat4(), glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+	glm::mat4 viewMatrix = glm::lookAt(eyePos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 	glm::mat4 projMatrix = glm::perspective(glm::radians(60.0f), swapChainExtent.width / (float)swapChainExtent.height, 0.1f, 10.0f);
 	projMatrix[1][1] *= -1;
 
