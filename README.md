@@ -22,11 +22,16 @@ learning/developing/designing
 
 <h3>Physically-Based Rendering</h3>
 
-* Diffuse and Phong specular lighting <img src="https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/basic_lighting.PNG" style="width: 100px;"/>
-* Diffuse and Blinn-Phong specular lighting <img src="https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/basic_lighting_Blinn_phong.PNG" style="width: 100px;"/>
-* Normal Mapping <img src="https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/normal_mapping.PNG" style="width: 100px;"/>
-* Parallax Occlusion Mapping <img src="https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/parallax_mapping.PNG" style="width: 100px;"/>
-* PBR with single light source <img src="https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/PBR.PNG" style="width: 100px;"/>
+* Diffuse and Phong specular lighting 
+<img src="https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/basic_lighting.PNG" style="width: 150px; height: 100px;"/>
+* Diffuse and Blinn-Phong specular lighting 
+<img src="https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/basic_lighting_Blinn_phong.PNG" style="width: 150px; height: 100px;"/>
+* Normal Mapping 
+<img src="https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/normal_mapping.PNG" style="width: 150px; height: 100px;"/>
+* Parallax Occlusion Mapping 
+<img src="https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/parallax_mapping.PNG" style="width: 150px; height: 100px;"/>
+* PBR with single light source 
+<img src="https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/PBR.PNG" style="width: 150px; height: 100px;"/>
 
 <h3>References: </h3>
 
