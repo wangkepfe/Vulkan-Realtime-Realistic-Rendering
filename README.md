@@ -23,7 +23,7 @@ learning/developing/designing
 <h3>Physically-Based Rendering</h3>
 
 * Diffuse and Phong specular lighting
-![alt text](https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/basic_lighting.PNG =250x)
+![alt text](https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/basic_lighting.PNG=250x)
 * Diffuse and Blinn-Phong specular lighting
 ![alt text](https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/basic_lighting_Blinn_phong.PNG =250x)
 * Normal Mapping
