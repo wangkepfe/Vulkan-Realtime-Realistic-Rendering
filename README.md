@@ -20,6 +20,19 @@ learning/developing/designing
 * image library: <a href='https://github.com/nothings/stb'>stb_image.h</a>
 * obj model library: <a href='https://github.com/syoyo/tinyobjloader'>tiny_obj_loader.h</a>
 
+<h3>Physically-Based Rendering</h3>
+
+* Diffuse and Phong specular lighting
+![alt text](https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/basic_lighting.PNG "basic_lighting")
+* Diffuse and Blinn-Phong specular lighting
+![alt text](https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/basic_lighting_Blinn_phong.PNG "basic_lighting_Blinn_phong")
+* Normal Mapping
+![alt text](https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/normal_mapping.PNG "normal_mapping")
+* Parallax Occlusion Mapping
+![alt text](https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/parallax_mapping.PNG "parallax_mapping")
+* PBR with single light source
+![alt text](https://github.com/wangkepfe/Vulkan-Graphics/blob/master/Demo/PBR.PNG "PBR")
+
 <h3>References: </h3>
 
 * <a href='http://vinjn.github.io/awesome-vulkan/'>Awesome Vulkan ecosystem</a>
