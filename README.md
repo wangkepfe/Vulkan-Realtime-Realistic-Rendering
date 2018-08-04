@@ -1,5 +1,5 @@
 # Vulkan-Graphics
-learning/developing/designing
+Vulkan. Realtime. Efficient. Fully GPU optimized.
 
 <h3>Hello Triangle</h3>
 
